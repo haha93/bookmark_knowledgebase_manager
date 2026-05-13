@@ -3,6 +3,7 @@ from database import db
 from models import BookmarkCreate, BookmarkUpdate, NoteCreate, NoteUpdate
 from bson import ObjectId
 from datetime import datetime
+from fastapi_mcp import FastApiMCP
 
 app = FastAPI(title="Bookmark & Knowledge Base Manager")
 
@@ -120,3 +121,7 @@ async def delete_note(id: str):
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Note not found")
     return {"message": "Note deleted"}
+
+
+mcp = FastApiMCP(app)
+mcp.mount()

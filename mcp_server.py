@@ -122,4 +122,4 @@ async def delete_note(id: str) -> dict:
 
 
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run(transport="sse")
