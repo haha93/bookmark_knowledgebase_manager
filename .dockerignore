@@ -1,0 +1,4 @@
+fastfirst/
+__pycache__/
+.env
+.git/
